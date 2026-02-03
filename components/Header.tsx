@@ -7,28 +7,10 @@ const Header: React.FC = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     closeMenu();
-    
-    if (id === 'top') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
-    }
-
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80; // Header height
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -36,7 +18,7 @@ const Header: React.FC = () => {
       <nav className="max-w-7xl mx-auto px-6 md:px-12 py-6 flex justify-between items-center">
         <a 
           href="#" 
-          onClick={(e) => scrollToSection(e, 'top')} 
+          onClick={scrollToTop} 
           className="text-2xl font-serif tracking-widest uppercase hover:opacity-70 transition-opacity"
         >
           Amani <span className="font-light">Asesores</span>
@@ -46,21 +28,18 @@ const Header: React.FC = () => {
         <div className="hidden md:flex space-x-12 text-xs uppercase tracking-widest font-sans font-light">
           <a 
             href="#filosofia" 
-            onClick={(e) => scrollToSection(e, 'filosofia')}
             className="hover:text-bronze-mute transition-colors duration-300"
           >
             Filosofía
           </a>
           <a 
             href="#servicios" 
-            onClick={(e) => scrollToSection(e, 'servicios')}
             className="hover:text-bronze-mute transition-colors duration-300"
           >
             Servicios
           </a>
           <a 
             href="#contacto" 
-            onClick={(e) => scrollToSection(e, 'contacto')}
             className="hover:text-bronze-mute transition-colors duration-300"
           >
             Contacto
@@ -90,27 +69,9 @@ const Header: React.FC = () => {
         }`}
       >
         <div className="flex flex-col items-center justify-center h-full space-y-12 text-sm uppercase tracking-[0.3em] font-sans font-light">
-          <a 
-            href="#filosofia" 
-            onClick={(e) => scrollToSection(e, 'filosofia')} 
-            className="hover:text-bronze-mute transition-colors"
-          >
-            Filosofía
-          </a>
-          <a 
-            href="#servicios" 
-            onClick={(e) => scrollToSection(e, 'servicios')} 
-            className="hover:text-bronze-mute transition-colors"
-          >
-            Servicios
-          </a>
-          <a 
-            href="#contacto" 
-            onClick={(e) => scrollToSection(e, 'contacto')} 
-            className="hover:text-bronze-mute transition-colors"
-          >
-            Contacto
-          </a>
+          <a href="#filosofia" onClick={closeMenu} className="hover:text-bronze-mute transition-colors">Filosofía</a>
+          <a href="#servicios" onClick={closeMenu} className="hover:text-bronze-mute transition-colors">Servicios</a>
+          <a href="#contacto" onClick={closeMenu} className="hover:text-bronze-mute transition-colors">Contacto</a>
         </div>
       </div>
     </header>

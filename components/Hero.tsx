@@ -2,23 +2,6 @@
 import React from 'react';
 
 const Hero: React.FC = () => {
-  const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const element = document.getElementById('contacto');
-    if (element) {
-      const offset = 80;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   return (
     <section className="relative h-screen flex items-center justify-center px-6 overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
@@ -39,7 +22,6 @@ const Hero: React.FC = () => {
         </p>
         <a 
           href="#contacto" 
-          onClick={scrollToContact}
           className="inline-block px-12 py-4 border border-charcoal text-xs uppercase tracking-widest hover:bg-charcoal hover:text-stone-bg transition-all duration-500 ease-in-out"
         >
           Consultar
