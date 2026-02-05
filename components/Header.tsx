@@ -14,11 +14,11 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-stone-bg/90 backdrop-blur-md border-b border-stone-200/50">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200/50">
       <nav className="max-w-7xl mx-auto px-6 md:px-12 py-6 flex justify-between items-center">
-        <a 
-          href="#" 
-          onClick={scrollToTop} 
+        <a
+          href="#"
+          onClick={scrollToTop}
           className="text-2xl font-serif tracking-widest uppercase hover:opacity-70 transition-opacity"
         >
           Amani <span className="font-light">Asesores</span>
@@ -26,20 +26,20 @@ const Header: React.FC = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-12 text-xs uppercase tracking-widest font-sans font-light">
-          <a 
-            href="#filosofia" 
+          <a
+            href="#filosofia"
             className="hover:text-bronze-mute transition-colors duration-300"
           >
             Filosofía
           </a>
-          <a 
-            href="#servicios" 
+          <a
+            href="#servicios"
             className="hover:text-bronze-mute transition-colors duration-300"
           >
             Servicios
           </a>
-          <a 
-            href="#contacto" 
+          <a
+            href="#contacto"
             className="hover:text-bronze-mute transition-colors duration-300"
           >
             Contacto
@@ -47,7 +47,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           onClick={toggleMenu}
           className="md:hidden text-charcoal focus:outline-none p-2"
           aria-label="Menu"
@@ -62,16 +62,14 @@ const Header: React.FC = () => {
         </button>
       </nav>
 
-      {/* Mobile Menu Overlay */}
-      <div 
-        className={`fixed inset-0 top-[81px] bg-stone-bg transition-all duration-500 ease-in-out z-40 md:hidden ${
-          isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
-        }`}
+      <div
+        className={`absolute top-full right-0 w-40 bg-white text-black shadow-lg transition-all duration-300 ease-in-out md:hidden ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
+          }`}
       >
-        <div className="flex flex-col items-center justify-center h-full space-y-12 text-sm uppercase tracking-[0.3em] font-sans font-light">
-          <a href="#filosofia" onClick={closeMenu} className="hover:text-bronze-mute transition-colors">Filosofía</a>
-          <a href="#servicios" onClick={closeMenu} className="hover:text-bronze-mute transition-colors">Servicios</a>
-          <a href="#contacto" onClick={closeMenu} className="hover:text-bronze-mute transition-colors">Contacto</a>
+        <div className="flex flex-col items-start p-8 space-y-6 text-sm uppercase tracking-[0.3em] font-sans font-light">
+          <a href="#filosofia" onClick={closeMenu} className="hover:text-bronze-mute transition-colors w-full text-right">Filosofía</a>
+          <a href="#servicios" onClick={closeMenu} className="hover:text-bronze-mute transition-colors w-full text-right">Servicios</a>
+          <a href="#contacto" onClick={closeMenu} className="hover:text-bronze-mute transition-colors w-full text-right">Contacto</a>
         </div>
       </div>
     </header>
