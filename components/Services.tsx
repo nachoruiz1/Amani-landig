@@ -31,12 +31,12 @@ const Services: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-8">
           {services.map((service, index) => (
-            <div 
-              key={service.id} 
+            <div
+              key={service.id}
               className="fade-in flex flex-col"
               style={{ transitionDelay: `${index * 150}ms` }}
             >
-              <span className="text-6xl font-serif font-light text-stone-200 mb-6">
+              <span className="text-6xl font-serif font-light text-stone-200 mb-6" aria-hidden="true">
                 0{index + 1}
               </span>
               <h3 className="text-2xl font-serif mb-4 tracking-wide">{service.title}</h3>

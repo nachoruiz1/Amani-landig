@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
   const legalContent = {
     aviso: {
       title: "Aviso Legal",
-      text: "Amani Asesores, con domicilio social en Madrid, cumple con las normativas de servicios de la sociedad de la información. Este sitio tiene un propósito exclusivamente informativo sobre nuestros servicios de consultoría y gestión estratégica. La propiedad intelectual de los contenidos pertenece a Amani Asesores."
+      text: "Amani Asesores, con domicilio social en Gipuzkoa, cumple con las normativas de servicios de la sociedad de la información. Este sitio tiene un propósito exclusivamente informativo sobre nuestros servicios de consultoría y gestión estratégica. La propiedad intelectual de los contenidos pertenece a Amani Asesores."
     },
     privacidad: {
       title: "Política de Privacidad",
@@ -45,8 +45,8 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-20">
           {/* Branding */}
           <div className="space-y-6">
-            <a 
-              href="#" 
+            <a
+              href="#"
               onClick={scrollToTop}
               className="text-2xl font-serif tracking-widest uppercase inline-block hover:opacity-70 transition-opacity"
             >
@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
               Arquitectos de la estabilidad empresarial. Gestión integral con un enfoque en la precisión y la discreción.
             </p>
           </div>
-          
+
           {/* Main Navigation */}
           <div className="flex flex-col space-y-4">
             <span className="text-[10px] uppercase tracking-[0.3em] font-medium text-bronze-mute mb-2">Navegación</span>
@@ -68,19 +68,19 @@ const Footer: React.FC = () => {
           {/* Legal Navigation */}
           <div className="flex flex-col space-y-4">
             <span className="text-[10px] uppercase tracking-[0.3em] font-medium text-bronze-mute mb-2">Legal</span>
-            <button 
+            <button
               onClick={() => openLegal('aviso')}
               className="text-xs uppercase tracking-widest text-left hover:text-bronze-mute transition-colors w-fit"
             >
               Aviso Legal
             </button>
-            <button 
+            <button
               onClick={() => openLegal('privacidad')}
               className="text-xs uppercase tracking-widest text-left hover:text-bronze-mute transition-colors w-fit"
             >
               Política de Privacidad
             </button>
-            <button 
+            <button
               onClick={() => openLegal('cookies')}
               className="text-xs uppercase tracking-widest text-left hover:text-bronze-mute transition-colors w-fit"
             >
@@ -102,16 +102,16 @@ const Footer: React.FC = () => {
 
       {/* Modal Overlay */}
       {activeLegal && (
-        <div 
+        <div
           className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-charcoal/10 backdrop-blur-sm transition-all duration-300"
           onClick={closeLegal}
         >
-          <div 
+          <div
             className="bg-stone-bg border border-stone-200 w-full max-w-lg shadow-2xl relative fade-in visible"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
-            <button 
+            <button
               onClick={closeLegal}
               className="absolute top-6 right-6 text-charcoal/40 hover:text-charcoal transition-colors"
               aria-label="Cerrar"
@@ -132,7 +132,7 @@ const Footer: React.FC = () => {
                 {legalContent[activeLegal].text}
               </p>
               <div className="mt-12 pt-8 border-t border-stone-100">
-                <button 
+                <button
                   onClick={closeLegal}
                   className="text-[10px] uppercase tracking-widest font-sans hover:text-bronze-mute transition-colors"
                 >
